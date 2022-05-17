@@ -1,0 +1,5 @@
+var a;
+begin
+ a:=88;
+ if a>10 then write(1) else write(0)
+end.

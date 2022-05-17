@@ -1,0 +1,10 @@
+Iput pl/0 file ?y
+0 var a;
+
+1 begin
+
+2  a:=88;
+
+4  if a>10 then write(1) else write(0)
+
+13 end.
