@@ -1,0 +1,36 @@
+Iput pl/0 file ?Y
+0 var n,res;
+
+1 procedure p;
+
+1     var i;
+
+2     begin    
+
+3         i:=1;
+
+5         while i<=n do
+
+9             begin
+
+9                 res:=res+i;
+
+13                 i:=i+1;
+
+17             end
+
+17     end;
+
+19 
+
+19 begin
+
+20     read(n);
+
+22     res:=0;
+
+24     call p;
+
+25 
+
+25 end.

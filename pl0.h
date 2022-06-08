@@ -1,13 +1,13 @@
-                         /*PL/0 ±àÒëÏµÍ³C°æ±¾Í·ÎÄ¼ş pl0.h*/
+                         /*PL/0 ç¼–è¯‘ç³»ç»ŸCç‰ˆæœ¬å¤´æ–‡ä»¶ pl0.h*/
 
-# define norw 14                 /*¹Ø¼ü×Ö¸öÊı*/
-# define txmax 100               /*Ãû×Ö±íÈİÁ¿*/
-# define nmax  14                /*numberµÄ×î´óÎ»Êı*/
-# define al 10                   /*·ûºÅµÄ×î´ó³¤¶È*/
-# define amax 2047               /*µØÖ·ÉÏ½ç*/
-# define levmax 3                /*×î´óÔÊĞí¹ı³ÌÇ¶Ì×ÉùÃ÷²ãÊı[0£¬lexmax]*/
-# define cxmax 200               /*×î¶àµÄĞéÄâ»ú´úÂëÊı*/
-/*·ûºÅ*/
+# define norw 14                 /*å…³é”®å­—ä¸ªæ•°*/
+# define txmax 100               /*åå­—è¡¨å®¹é‡*/
+# define nmax  14                /*numberçš„æœ€å¤§ä½æ•°*/
+# define al 10                   /*ç¬¦å·çš„æœ€å¤§é•¿åº¦*/
+# define amax 2047               /*åœ°å€ä¸Šç•Œ*/
+# define levmax 3                /*æœ€å¤§å…è®¸è¿‡ç¨‹åµŒå¥—å£°æ˜å±‚æ•°[0ï¼Œlexmax]*/
+# define cxmax 200               /*æœ€å¤šçš„è™šæ‹Ÿæœºä»£ç æ•°*/
+/*ç¬¦å·*/
 enum symbol {
     nul, ident, number, plus, minus,
     times, slash, oddsym, eql, neq, 
@@ -72,19 +72,19 @@ bool facbegsys[symnum];
 
 struct tablestruct
 {
-   char name[al];                            /*Ãû×Ö*/
-   enum object kind;                         /*ÀàĞÍ£ºconst£¬var£¬array or procedure*/
-   int val;                                  /*ÊıÖµ£¬½öconstÊ¹ÓÃ*/
-   int level;                                /*Ëù´¦²ã£¬½öconst²»Ê¹ÓÃ*/
-   int adr;                                  /*µØÖ·£¬½öconst²»Ê¹ÓÃ*/
-   int size;                                 /*ĞèÒª·ÖÅäµÄÊı¾İÇø¿Õ¼ä£¬½öprocedureÊ¹ÓÃ*/
+   char name[al];                            /*åå­—*/
+   enum object kind;                         /*ç±»å‹ï¼šconstï¼Œvarï¼Œarray or procedure*/
+   int val;                                  /*æ•°å€¼ï¼Œä»…constä½¿ç”¨*/
+   int level;                                /*æ‰€å¤„å±‚ï¼Œä»…constä¸ä½¿ç”¨*/
+   int adr;                                  /*åœ°å€ï¼Œä»…constä¸ä½¿ç”¨*/
+   int size;                                 /*éœ€è¦åˆ†é…çš„æ•°æ®åŒºç©ºé—´ï¼Œä»…procedureä½¿ç”¨*/
 };
-struct tablestruct table[txmax];             /*Ãû×Ö±í*/
+struct tablestruct table[txmax];             /*åå­—è¡¨*/
 FILE * fin;
 FILE* fout;
 char fname[al];
-int err;                                       /*´íÎó¼ÆÊıÆ÷*/
-/*µ±º¯ÊıÖĞ»á·¢Éúfatal errorÊ±£¬·µ»Ø£­1¸æÖªµ÷ÓÃËüµÄº¯Êı£¬×îÖÕÍË³ö³ÌĞò*/
+int err;                                       /*é”™è¯¯è®¡æ•°å™¨*/
+/*å½“å‡½æ•°ä¸­ä¼šå‘ç”Ÿfatal erroræ—¶ï¼Œè¿”å›ï¼1å‘ŠçŸ¥è°ƒç”¨å®ƒçš„å‡½æ•°ï¼Œæœ€ç»ˆé€€å‡ºç¨‹åº*/
 #define getsymdo                              if(-1==getsym())return -1
 #define getchdo                               if(-1==getch())return -1
 #define testdo(a,b,c)                         if(-1==test(a,b,c))return -1
